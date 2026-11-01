@@ -6,18 +6,16 @@ application:
       backend: file:///lzcapp/pkg/content/licenses/
     - location: /
       backend: http://mailpit:8025/
-
 services:
   mailpit:
-    # upstream: ghcr.io/axllent/mailpit:v1.33.0
-    image: ghcr.1ms.run/axllent/mailpit:v1.33.0
+    # upstream: axllent/mailpit:v1.33.0
+    image: docker.1ms.run/axllent/mailpit:v1.33.0
     environment:
       - MP_MAX_MESSAGES=5000
       - MP_DATABASE=/data/mailpit.db
       - TZ=Asia/Shanghai
     binds:
       - /lzcapp/var/data:/data
-
 usage: |
   Mailpit 是邮件测试工具：接收你应用发出的测试邮件，在网页里查看、搜索、转发，避免误发给真实用户。
 
