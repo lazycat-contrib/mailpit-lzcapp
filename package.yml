@@ -1,0 +1,18 @@
+package: community.lazycat.app.mailpit
+version: 1.33.0
+name: Mailpit
+description: "Email and SMTP testing tool with a fast web UI and API."
+min_os_version: "1.5.0"
+homepage: https://github.com/axllent/mailpit
+author: axllent
+license: MIT
+permissions:
+  required:
+    - net.internet
+locales:
+  zh:
+    name: Mailpit
+    description: "邮件与 SMTP 测试工具：接收测试邮件并在网页里查看、检索和转发。"
+  en:
+    name: Mailpit
+    description: "Email and SMTP testing tool with a fast web UI and API."
