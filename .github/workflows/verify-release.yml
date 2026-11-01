@@ -77,8 +77,8 @@ jobs:
               assert 'public_path' not in app
 
               svc = m['services']['mailpit']
-              # The Action pins the runtime by digest, so match the repository prefix.
-              assert svc['image'].startswith('ghcr.1ms.run/axllent/mailpit'), svc['image']
+              # The mirror host is resolved at build time; assert on the repository part.
+              assert 'axllent/mailpit' in svc['image'], svc['image']
               assert svc['binds'] == ['/lzcapp/var/data:/data']
               env = '\n'.join(svc['environment'])
               assert 'MP_DATABASE=/data/mailpit.db' in env
